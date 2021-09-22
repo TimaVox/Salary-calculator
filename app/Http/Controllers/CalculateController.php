@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Calculated;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Calculate;
 
@@ -22,6 +23,11 @@ class CalculateController extends Controller
         return Calculate::init($request->all())->calculate();
     }
 
+    /**
+     * Метод возврата данных по зарплате с сохранением в базу данных
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function store(Request $request)
     {
         $dataResult = Calculate::init($request->all())->calculate();
