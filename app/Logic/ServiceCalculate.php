@@ -165,11 +165,11 @@ class ServiceCalculate
     protected function toArray()
     {
         return [
-            'ipn' => $this->ipn(),
-            'opv' => $this->opv(),
-            'osms' => $this->osms(),
-            'vosms' => $this->osms(),
-            'so' => $this->so(),
+            'ipn' => $this->numberFormat($this->ipn()),
+            'opv' => $this->numberFormat($this->opv()),
+            'osms' => $this->numberFormat($this->osms()),
+            'vosms' => $this->numberFormat($this->osms()),
+            'so' => $this->numberFormat($this->so()),
             'salary' => $this->numberFormat($this->salaryNew),
             'total' => $this->numberFormat($this->salaryNew)
         ];
